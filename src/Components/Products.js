@@ -1,8 +1,8 @@
 import React from 'react'
-
+import './css/theme.css'
 const Products = () => {
     return (
-        <div>
+        <div className="app">
          <h1>Products</h1>
         </div>
     )

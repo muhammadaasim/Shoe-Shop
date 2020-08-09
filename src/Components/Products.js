@@ -2,6 +2,7 @@ import React from 'react'
 import Shoes from '../DataSet/Shoes';
 import { Link } from 'react-router-dom';
 import './css/theme.css'
+import {Button} from '@material-ui/core';
 const Products = () => {
     return (
         <div className="app">
@@ -22,6 +23,9 @@ const Products = () => {
                                 <img src={item.IMG} alt={item.NAME} className="item-img" />
                                 <h4>{item.NAME}</h4>
                                 <h3>{item.PRICE}</h3>
+                                <Button variant="contained" color="primary">
+                                Add to Cart
+                                </Button>
                             </Link>
                         )
                     }

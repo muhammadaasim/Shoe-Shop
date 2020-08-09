@@ -10,14 +10,21 @@
     justify-content: space-around;
 }
 .item-container>.item-card{
-    height:350px;
+    height:380px;
     width:300;
 padding:20px;
-margin:10px;
+/* margin:10px; */
 box-shadow: 0px 0px 5px #dfdfdf;
 text-decoration: none;
 }
 .item-img{
     height:250px;
     width:auto;
+}
+button{
+height:30px;
+width:100%;
+} 
+h3{
+color:red;
 }

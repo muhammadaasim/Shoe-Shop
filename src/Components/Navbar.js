@@ -82,7 +82,7 @@ class ResAppBar extends Component{
                 className = {this.props.classes.sideBarIcon}
                 onClick={()=>{this.setState({drawer:true})}} />
               <Typography color="inherit" variant = "headline" style={{fontSize:23}}>S-SHOP</Typography>
-              <Typography color="inherit" variant = "headline">          <Link to="/cart"><img src={Cart} alt="Cart" style={{height:20,width:20,marginLeft:10,marginTop:5}}/></Link></Typography>
+              <Typography color="inherit" variant = "headline">          <Link to="/cart"><img src={Cart} alt="Cart" style={{height:20,width:20,marginLeft:10,marginTop:5}}/></Link><span className="cart">0</span></Typography>
             </Grid>
           </Toolbar>
         </AppBar>
@@ -119,7 +119,7 @@ class ResAppBar extends Component{
           <Typography variant = "subheading" className = {classes.padding} color="inherit" ><Link to="/" className={this.props.classes.Links}>HOME</Link></Typography>
           <Typography variant = "subheading" className = {classes.padding} color="inherit" ><Link to="/products" className={this.props.classes.Links}>PRODUCTS</Link></Typography>
           <Typography variant = "subheading" className = {classes.padding} color="inherit" ><Link to="/about" className={this.props.classes.Links}>ABOUT</Link></Typography>
-          <Link to="/cart"><img src={Cart} alt="Cart" style={{height:20,width:20,marginLeft:10,marginTop:5}}/></Link>
+          <Link to="/cart"><img src={Cart} alt="Cart" style={{height:20,width:20,marginLeft:10,marginTop:5}}/><span className="cart">0</span></Link>
         </Toolbar>
       </AppBar>
     )

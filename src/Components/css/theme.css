@@ -28,3 +28,12 @@ width:100%;
 h3{
 color:red;
 }
+.cart{
+color:white;
+position: relative;
+top:-20px;
+font-size: small;
+font-weight: bold;
+background-color:black;
+z-index: -1;
+}

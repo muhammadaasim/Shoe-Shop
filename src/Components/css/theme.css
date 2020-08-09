@@ -3,3 +3,21 @@
     margin-left:30px;
     margin-right:30px;
 }
+.item-container{
+    display:flex;
+  flex-wrap: wrap;
+    box-shadow: 0 0 0 5 #cccccc;
+    justify-content: space-around;
+}
+.item-container>.item-card{
+    height:350px;
+    width:300;
+padding:20px;
+margin:10px;
+box-shadow: 0px 0px 5px #dfdfdf;
+text-decoration: none;
+}
+.item-img{
+    height:250px;
+    width:auto;
+}

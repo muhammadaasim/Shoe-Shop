@@ -1,32 +1,28 @@
 import React from 'react'
-import Shoes from '../DataSet/Shoes';
+import Shoes from '../Context/ShoesData.json';
 import { Link } from 'react-router-dom';
 import './css/theme.css'
-import {Button} from '@material-ui/core';
+import { Button } from '@material-ui/core';
 const Products = () => {
+
     return (
         <div className="app">
-            <h1>Products</h1>
-            <div className="item-container">
+            <h1>Products List</h1>
+            <div className="product-container">
                 {
-                    // Object.keys(Shoes).map(keyName => {
-                    //     const Shoe = Shoes[keyName.id];
-                    //     return (
-                    //         <Link Key={keyName} className="lnk" to={`/product/${keyName}`}>
-                    //             <h4>{Shoe.Name}</h4>
-                    //             <h5>{Shoe.Price}</h5>
-                    //         </Link>)
-                    
-                    Shoes.map(item => {
+                    Object.keys(Shoes).map(KeyName => {
+                        const Shoe = Shoes[KeyName];
                         return (
-                            <Link to={`/product/${item.ID}`} className="item-card">
-                                <img src={item.IMG} alt={item.NAME} className="item-img" />
-                                <h4>{item.NAME}</h4>
-                                <h3>{item.PRICE}</h3>
-                                <Button variant="contained" color="primary">
-                                Add to Cart
+                            <div className="product-card">
+                                <Link to={`/details/${KeyName}`}>
+                                    <img src={Shoe.img} alt={Shoe.name} className="product-img" />
+                                    <h4>{Shoe.name}</h4>
+                                    <h3>{Shoe.price}</h3>
+                                </Link>
+                                <Button variant="contained" color="primary" className="cart-btn" disabled>
+                                    Add to Cart
                                 </Button>
-                            </Link>
+                            </div>
                         )
                     }
                     )
@@ -37,10 +33,3 @@ const Products = () => {
 }
 
 export default Products;
-
-// shoeData.map(item => (
-//     <GridListTile key={item.id} cols={item.cols}>
-//         <Link to={`/item/${item.id}`} >
-//             <img src={item.img} alt={item.name} className={classes.img} />
-//             <SvgWave className={classes.wave} />
-//         </Link>

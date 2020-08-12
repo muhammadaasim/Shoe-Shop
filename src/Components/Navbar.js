@@ -1,27 +1,12 @@
-// import React from 'react'
-// import {Link} from 'react-router-dom';
-// const Navbar = () => {
-//     return (
-//         <div>
-//         <ul>
-//         <li><Link to="/">Home</Link></li>
-//         <li><Link to="/about">About</Link></li>
-//         <li><Link to="/products">Products</Link></li>
-//         </ul>            
-//         </div>
-//     )
-// }
-
-// export default Navbar
-import React, { Component } from 'react';
-import Cart from './imgs/cart.svg'
+import React, { Component} from 'react';
 import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import {
   AppBar,Toolbar, Typography, List, ListItem,
-  withStyles, Grid, SwipeableDrawer
+  withStyles, Grid, SwipeableDrawer,IconButton,Badge
 } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart'
 const styleSheet = {
   list : {
     width : 200,
@@ -46,9 +31,20 @@ textDecoration:"none",
   Menu:{
     marginRight:40,
   },
+  
 }
+const StyledBadge = withStyles((theme) => ({
+  badge: {
+    right: -3,
+    top: 13,
+    border: `2px solid ${theme.palette.background.paper}`,
+    padding: '0 4px',
+  },
+}))(Badge);
+
 
 class ResAppBar extends Component{
+  
   constructor(props){
     super(props);
     this.state = {drawerActivate:false, drawer:false};
@@ -82,7 +78,6 @@ class ResAppBar extends Component{
                 className = {this.props.classes.sideBarIcon}
                 onClick={()=>{this.setState({drawer:true})}} />
               <Typography color="inherit" variant = "headline" style={{fontSize:23}}>S-SHOP</Typography>
-              <Typography color="inherit" variant = "headline">          <Link to="/cart"><img src={Cart} alt="Cart" style={{height:20,width:20,marginLeft:10,marginTop:5}}/></Link><span className="cart">0</span></Typography>
             </Grid>
           </Toolbar>
         </AppBar>
@@ -119,7 +114,11 @@ class ResAppBar extends Component{
           <Typography variant = "subheading" className = {classes.padding} color="inherit" ><Link to="/" className={this.props.classes.Links}>HOME</Link></Typography>
           <Typography variant = "subheading" className = {classes.padding} color="inherit" ><Link to="/products" className={this.props.classes.Links}>PRODUCTS</Link></Typography>
           <Typography variant = "subheading" className = {classes.padding} color="inherit" ><Link to="/about" className={this.props.classes.Links}>ABOUT</Link></Typography>
-          <Link to="/cart"><img src={Cart} alt="Cart" style={{height:20,width:20,marginLeft:10,marginTop:5}}/><span className="cart">0</span></Link>
+          <Link to="/cart">              <IconButton aria-label="cart">
+      <StyledBadge badgeContent={ 0 } color="secondary">
+        <ShoppingCartIcon style={{color:"white"}}/>
+      </StyledBadge>
+    </IconButton></Link>
         </Toolbar>
       </AppBar>
     )

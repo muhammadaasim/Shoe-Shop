@@ -78,6 +78,14 @@ class ResAppBar extends Component{
                 className = {this.props.classes.sideBarIcon}
                 onClick={()=>{this.setState({drawer:true})}} />
               <Typography color="inherit" variant = "headline" style={{fontSize:23}}>S-SHOP</Typography>
+              <Typography color="inherit" variant = "headline">          
+              <Link to="/cart">
+              <IconButton aria-label="cart">
+      <StyledBadge badgeContent={ 0 } color="secondary">
+        <ShoppingCartIcon style={{color:"white"}}/>
+      </StyledBadge>
+    </IconButton>
+              </Link></Typography>
             </Grid>
           </Toolbar>
         </AppBar>
@@ -93,8 +101,7 @@ class ResAppBar extends Component{
              onClick={()=>{this.setState({drawer:false})}}
              onKeyDown={()=>{this.setState({drawer:false})}}>
             <List className = {this.props.classes.list}>
-               <ListItem key = {1} button divider > <Link to="/" style={{textDecoration:'none'}}>HOME</Link> </ListItem>
-               <ListItem key = {2} button divider> <Link to="/products" style={{textDecoration:'none'}}>PRODUCTS</Link> </ListItem>
+               <ListItem key = {2} button divider> <Link to="/" style={{textDecoration:'none'}}>PRODUCTS</Link> </ListItem>
                <ListItem key = {3} button divider> <Link to="/about" style={{textDecoration:'none'}}>ABOUT</Link> </ListItem>
              </List>
          </div>
@@ -111,8 +118,7 @@ class ResAppBar extends Component{
       <AppBar>
         <Toolbar className={this.props.classes.Menu}>            
           <Typography style={{flexGrow:1,marginLeft:30,fontSize:25,}} color="inherit" >S-SHOP</Typography>
-          <Typography variant = "subheading" className = {classes.padding} color="inherit" ><Link to="/" className={this.props.classes.Links}>HOME</Link></Typography>
-          <Typography variant = "subheading" className = {classes.padding} color="inherit" ><Link to="/products" className={this.props.classes.Links}>PRODUCTS</Link></Typography>
+          <Typography variant = "subheading" className = {classes.padding} color="inherit" ><Link to="/" className={this.props.classes.Links}>PRODUCTS</Link></Typography>
           <Typography variant = "subheading" className = {classes.padding} color="inherit" ><Link to="/about" className={this.props.classes.Links}>ABOUT</Link></Typography>
           <Link to="/cart">              <IconButton aria-label="cart">
       <StyledBadge badgeContent={ 0 } color="secondary">

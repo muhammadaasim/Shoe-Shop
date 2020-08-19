@@ -3,7 +3,7 @@ import './css/theme.css'
 const Cart = () => {
     return (
         <div class="app">
-              <h1>Cart</h1>
+              <h1>Cart Page</h1>
         </div>
     )
 }

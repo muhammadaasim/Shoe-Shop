@@ -1,5 +1,5 @@
 import React from 'react'
-import {BrowserRouter as Router,Routes,Route} from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import About from './Components/About';
 import Products from './Components/Products';
 import Details from './Components/Details';
@@ -11,16 +11,15 @@ const RouteConfig = () => {
     return (
         <div>
             <Router>
-            <Navbar/>
+                <Navbar />
                 <Routes>
-                <Route path="/" element={<Products/>}/>
-                    <Route path="/about" element={<About/>}/>
-                    
-                    <Route path="/details/:id" element={<Details/>}/>
-                    <Route path="/Cart" element={<Cart/>}/>
-                    <Route path="/*" element={<Error404/>}/>
+                    <Route path="/" element={<Products />} />
+                    <Route path="/about" element={<About />} />
+                    <Route path="/details/:id" element={<Details />} />
+                    <Route path="/Cart" element={<Cart />} />
+                    <Route path="/*" element={<Error404 />} />
                 </Routes>
-                <Footer/>
+                <Footer />
             </Router>
         </div>
     )

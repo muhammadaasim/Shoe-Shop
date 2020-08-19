@@ -2,8 +2,8 @@ import React from 'react'
 import Shoes from '../Context/ShoesData.json';
 import { Link } from 'react-router-dom';
 import './css/theme.css'
-
 import { Button, Typography } from '@material-ui/core';
+
 const Products = () => {
     return (
         <div className="app">
@@ -19,7 +19,7 @@ const Products = () => {
                                     <Typography variant="h6" style={{ color: "blue", marginBottom: 10, marginTop: 15 }}>{shoe.name}</Typography>
                                     <Typography variant="h6" style={{ color: "red", marginBottom: 15 }}>{shoe.price}</Typography>
                                 </Link>
-                                <Button variant="contained" color="primary" className="cart-btn" disable>
+                                <Button variant="contained" color="primary" className="cart-btn" disabled>
                                     Add to Cart
                                     </Button>
                             </div>
